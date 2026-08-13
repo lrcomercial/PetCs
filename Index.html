@@ -1,5 +1,206 @@
 <!DOCTYPE html>
-<html>
-<head><title>Teste</title></head>
-<body><h1>GitHub Pages está funcionando!</h1></body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetC - Cuidado e Conexão para seu Pet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        body {
+            background-color: #f9fafc;
+            scroll-behavior: smooth;
+        }
+        :root {
+            --primary: #0b3b5c;
+            --secondary: #f39c12;
+            --text-gray: #576574;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            padding: 16px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+        .logo span { color: var(--secondary); }
+        .logo small {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-gray);
+            margin-left: 6px;
+        }
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1e272e;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+        nav a:hover { color: var(--secondary); }
+        .btn-login {
+            background: var(--primary);
+            color: white !important;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-login:hover {
+            background: var(--secondary) !important;
+            color: var(--primary) !important;
+            transform: scale(1.05);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #eaf2f8 0%, #ffffff 100%);
+            text-align: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .hero h1 span { color: var(--secondary); }
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        .hero .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.8);
+            padding: 40px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        footer .logo { color: white; }
+        footer .logo span { color: #f1c40f; }
+        footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin: 6px 0;
+        }
+        footer a:hover { color: white; }
+        footer .copy {
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .test-box {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            font-weight: 600;
+            border-left: 5px solid #28a745;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 16px;
+            }
+            nav.open { display: flex; }
+            .hero h1 { font-size: 34px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Pet<span>C</span><small>cuidado &amp; conexão</small></div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav id="mainNav">
+            <a href="?page=index">Início</a>
+            <a href="?page=clinicas">Clínicas</a>
+            <a href="?page=eventos">Eventos</a>
+            <a href="?page=petshop">Petshop</a>
+            <a href="?page=login" class="btn-login">Entrar</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="icon">🐾</div>
+        <h1>Cuidado e <span>conexão</span> para seu pet</h1>
+        <p>Perfil digital, cartão de vacina online, clínicas, criadores e muito mais. Tudo 100% gratuito para você e seu melhor amigo.</p>
+        
+        <div class="test-box">
+            ✅ TESTE: Se você está vendo esta caixa verde, o HTML básico da página inicial está carregando perfeitamente!
+        </div>
+        
+        <p style="margin-top:20px; color:#576574;">
+            <a href="?page=login" style="background:#0b3b5c; color:white; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:700;">🚀 Entrar na Plataforma</a>
+        </p>
+    </section>
+
+    <footer>
+        <div><div class="logo">Pet<span>C</span></div><p style="margin-top:8px; max-width:220px;">Cuidado, conexão e comunidade para os animais que amamos.</p></div>
+        <div><strong style="color:white;">Plataforma</strong><a href="?page=perfil">Perfil do Pet</a><a href="?page=vacinas">Cartão de Vacina</a><a href="?page=eventos">Eventos</a></div>
+        <div class="copy">© 2026 PetC - Todos os direitos reservados. Projeto 100% gratuito.</div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('open');
+        }
+        document.querySelectorAll('#mainNav a').forEach(a => a.addEventListener('click', () => document.getElementById('mainNav').classList.remove('open')));
+        
+        // Verificação simples para saber se o JavaScript está rodando
+        console.log('✅ Página inicial simplificada carregou com sucesso!');
+    </script>
+</body>
 </html>
